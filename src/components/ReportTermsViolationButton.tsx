@@ -66,9 +66,9 @@ export default function ReportTermsViolationButton({
         <button
           onClick={() => setShowModal(true)}
           className="text-sm text-red-600 dark:text-red-400 hover:underline transition-colors duration-200"
-          aria-label="Report terms violation"
+          aria-label="举报违规内容"
         >
-          Report suspicious pizza delivery
+          举报可疑的文件分享
         </button>
       </div>
 
@@ -88,12 +88,12 @@ export default function ReportTermsViolationButton({
               id="modal-title"
               className="text-xl font-bold mb-4 text-stone-900 dark:text-stone-50"
             >
-              Found a suspicious delivery?
+              发现可疑的分享？
             </h2>
 
             <div className="space-y-4 text-stone-700 dark:text-stone-300">
               <p>
-                Before reporting this delivery, please note our FilePizza terms:
+                在举报之前，请注意我们的FilePizza使用条款：
               </p>
 
               <ul className="list-none space-y-3">

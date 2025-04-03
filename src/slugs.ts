@@ -25,17 +25,12 @@ function generateRandomWords(
     }
 
     const getRandomInt = (max: number): number => {
-      const limit = 4294967295 - (4294967295 % max) // uint32 max
-
-      let buffer = new Uint32Array(1)
-      do {
-        if (typeof window !== 'undefined' && window.crypto) {
-          window.crypto.getRandomValues(buffer)
-        } else {
-          crypto.randomFillSync(buffer)
-        }
-      } while (buffer[0] >= limit)
-
+      const buffer = new Uint32Array(1)
+      if (typeof window !== 'undefined' && window.crypto) {
+        window.crypto.getRandomValues(buffer)
+      } else {
+        crypto.randomFillSync(buffer)
+      }
       return buffer[0] % max
     }
 
@@ -49,12 +44,15 @@ function generateRandomWords(
   })
 }
 
-export const generateShortSlug = async (): Promise<string> => {
-  const parts = await generateRandomWords(
-    config.shortSlug.chars.split(''),
-    config.shortSlug.numChars,
-  )
-  return parts.join('')
+export const generateShortSlug = (): string => {
+  let result = ''
+  for (let i = 0; i < config.shortSlug.numChars; i++) {
+    result +=
+      config.shortSlug.chars[
+        Math.floor(Math.random() * config.shortSlug.chars.length)
+      ]
+  }
+  return result
 }
 
 export const generateLongSlug = async (): Promise<string> => {

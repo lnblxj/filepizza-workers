@@ -87,7 +87,7 @@ export default function DropZone({
           isDragging ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
-        Drop to select {fileCount} file{fileCount !== 1 ? 's' : ''}
+        拖拽选择 {fileCount} 个文件
       </div>
       <input
         type="file"
@@ -101,7 +101,7 @@ export default function DropZone({
         onClick={handleClick}
       >
         <span className="text-center text-stone-700 dark:text-stone-200">
-          Drop a file to get started
+          拖拽文件或点击此处开始
         </span>
       </button>
     </>

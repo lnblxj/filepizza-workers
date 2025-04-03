@@ -35,46 +35,41 @@ export function ConnectingToUploader({
   }, [showTroubleshootingAfter])
 
   if (!showTroubleshooting) {
-    return <Loading text="Connecting to uploader..." />
+    return <Loading text="正在连接上传者..." />
   }
 
   return (
     <>
-      <Loading text="Connecting to uploader..." />
+      <Loading text="正在连接上传者..." />
 
       <div className="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-lg p-8 max-w-md w-full">
         <h2 className="text-xl font-bold mb-4 text-stone-900 dark:text-stone-50">
-          Having trouble connecting?
+          连接遇到问题？
         </h2>
 
         <div className="space-y-4 text-stone-700 dark:text-stone-300">
           <p>
-            FilePizza uses direct peer-to-peer connections, but sometimes the
-            connection can get stuck. Here are some possible reasons this can
-            happen:
+            FilePizza使用直接的点对点连接，但有时连接可能会卡住。以下是可能发生这种情况的原因：
           </p>
 
           <ul className="list-none space-y-3">
             <li className="flex items-start gap-3 px-4 py-2 rounded-lg bg-stone-100 dark:bg-stone-800">
               <span className="text-base">🚪</span>
               <span className="text-sm">
-                The uploader may have closed their browser, lost connectivity,
-                or stopped the upload. FilePizza requires the uploader to stay
-                online continuously because files are transferred directly
-                between browsers.
+                上传者可能已关闭浏览器、失去连接或停止上传。由于文件是在浏览器之间直接传输的，
+                FilePizza需要上传者保持在线状态。
               </span>
             </li>
             <li className="flex items-start gap-3 px-4 py-2 rounded-lg bg-stone-100 dark:bg-stone-800">
               <span className="text-base">🔒</span>
               <span className="text-sm">
-                Your network might have strict firewalls or NAT settings, such
-                as having UPnP disabled
+                您的网络可能有严格的防火墙或NAT设置，例如禁用了UPnP
               </span>
             </li>
             <li className="flex items-start gap-3 px-4 py-2 rounded-lg bg-stone-100 dark:bg-stone-800">
               <span className="text-base">🌐</span>
               <span className="text-sm">
-                Some corporate or school networks block peer-to-peer connections
+                一些企业或学校网络会阻止点对点连接
               </span>
             </li>
           </ul>
@@ -97,7 +92,7 @@ export function DownloadComplete({
   return (
     <>
       <TitleText>
-        You downloaded {pluralize(filesInfo.length, 'file', 'files')}.
+        您已下载{pluralize(filesInfo.length, '个文件', '个文件')}。
       </TitleText>
       <div className="flex flex-col space-y-5 w-full">
         <UploadFileList files={filesInfo} />
@@ -124,7 +119,7 @@ export function DownloadInProgress({
   return (
     <>
       <TitleText>
-        You are downloading {pluralize(filesInfo.length, 'file', 'files')}.
+        您正在下载{pluralize(filesInfo.length, '个文件', '个文件')}。
       </TitleText>
       <div className="flex flex-col space-y-5 w-full">
         <UploadFileList files={filesInfo} />
@@ -149,8 +144,8 @@ export function ReadyToDownload({
   return (
     <>
       <TitleText>
-        You are about to start downloading{' '}
-        {pluralize(filesInfo.length, 'file', 'files')}.
+        您即将开始下载{' '}
+        {pluralize(filesInfo.length, '个文件', '个文件')}。
       </TitleText>
       <div className="flex flex-col space-y-5 w-full">
         <UploadFileList files={filesInfo} />
@@ -178,7 +173,7 @@ export function PasswordEntry({
 
   return (
     <>
-      <TitleText>This download requires a password.</TitleText>
+      <TitleText>此下载需要密码。</TitleText>
       <div className="flex flex-col space-y-5 w-full">
         <form
           action="#"
@@ -265,5 +260,5 @@ export default function Downloader({
     return <ConnectingToUploader />
   }
 
-  return <Loading text="Uh oh... Something went wrong." />
+  return <Loading text="啊哦...出现了一些问题。" />
 }

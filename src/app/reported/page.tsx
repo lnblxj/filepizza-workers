@@ -10,19 +10,17 @@ export default function ReportedPage(): JSX.Element {
       <Spinner direction="down" />
       <Wordmark />
 
-      <TitleText>This delivery has been halted.</TitleText>
+      <TitleText>此传输已被暂停。</TitleText>
       <div className="px-8 py-6 bg-stone-100 dark:bg-stone-800 rounded-lg border border-stone-200 dark:border-stone-700">
         <h3 className="text-lg font-medium text-stone-800 dark:text-stone-200 mb-4">
-          Message from the management
+          来自管理团队的消息
         </h3>
         <p className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
-          Just like a pizza with questionable toppings, we've had to put this
-          delivery on hold for potential violations of our terms of service. Our
-          delivery quality team is looking into it to ensure we maintain our
-          high standards.
+          就像一个配料可疑的披萨一样，由于可能违反了我们的服务条款，我们不得不暂停此次传输。
+          我们的质量团队正在进行调查，以确保我们保持高标准。
         </p>
         <div className="text-sm text-stone-500 dark:text-stone-400 italic">
-          - The FilePizza Team
+          - FilePizza 团队
         </div>
       </div>
 

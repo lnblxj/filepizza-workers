@@ -5,8 +5,8 @@ import ReturnHome from '../components/ReturnHome'
 import TitleText from '../components/TitleText'
 
 export const metadata = {
-  title: 'FilePizza - 404: Slice Not Found',
-  description: 'Oops! This slice of FilePizza seems to be missing.',
+  title: 'FilePizza - 404: 页面未找到',
+  description: '抱歉！这片FilePizza好像不见了。'
 }
 
 export default async function NotFound(): Promise<JSX.Element> {
@@ -14,7 +14,7 @@ export default async function NotFound(): Promise<JSX.Element> {
     <div className="flex flex-col items-center space-y-5 py-10 max-w-2xl mx-auto">
       <Spinner direction="down" />
       <Wordmark />
-      <TitleText>404: Looks like this slice of FilePizza got eaten!</TitleText>
+      <TitleText>404: 看来这片FilePizza已经被吃掉了！</TitleText>
       <ReturnHome />
     </div>
   )

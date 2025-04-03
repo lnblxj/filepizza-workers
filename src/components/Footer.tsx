@@ -36,29 +36,29 @@ export function Footer(): JSX.Element {
         <div className="flex flex-col items-center space-y-1 px-4 sm:px-6 md:px-8">
           <div className="flex items-center space-x-2">
             <p className="text-stone-600 dark:text-stone-400">
-              <strong>Like FilePizza v2?</strong> Support its development!{' '}
+              <strong>喜欢 FilePizza v2 吗？</strong> 支持它的开发！{' '}
             </p>
             <button
               className="px-1.5 py-0.5 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-200 font-medium text-[10px]"
               onClick={handleDonate}
             >
-              Donate
+              捐赠
             </button>
           </div>
 
           <p className="text-stone-600 dark:text-stone-400">
-            Cooked up by{' '}
-            <FooterLink href="http://kern.io">Alex Kern</FooterLink> &amp;{' '}
+            由{' '}
+            <FooterLink href="http://kern.io">Alex Kern</FooterLink> 和{' '}
             <FooterLink href="https://github.com/neerajbaid">
               Neeraj Baid
             </FooterLink>{' '}
-            while eating <strong>Sliver</strong> @ UC Berkeley &middot;{' '}
+            在 UC Berkeley 享用 <strong>Sliver</strong> 时开发 lnblxj汉化 &middot;{' '}
             <FooterLink href="https://github.com/kern/filepizza#faq">
-              FAQ
+              常见问题
             </FooterLink>{' '}
             &middot;{' '}
             <FooterLink href="https://github.com/kern/filepizza">
-              Fork us
+              在 GitHub 上查看
             </FooterLink>
           </p>
         </div>

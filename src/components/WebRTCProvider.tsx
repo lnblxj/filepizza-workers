@@ -93,7 +93,7 @@ export default function WebRTCPeerProvider({
   }
 
   if (!peerValue) {
-    return <Loading text="Initializing WebRTC peer..." />
+    return <Loading text="正在初始化WebRTC连接..." />
   }
 
   return (

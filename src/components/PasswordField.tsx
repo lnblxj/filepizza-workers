@@ -23,9 +23,9 @@ export default function PasswordField({
     <div className="flex flex-col w-full">
       <InputLabel
         hasError={isInvalid}
-        tooltip="The downloader must provide this password to start downloading the file. If you don't specify a password here, any downloader with the link to the file will be able to download it. It is not used to encrypt the file, as this is performed by WebRTC's DTLS already."
+        tooltip="下载者必须提供此密码才能开始下载文件。如果您不在此处指定密码，任何拥有链接的下载者都可以下载该文件。由于WebRTC的DTLS已经执行了加密，因此此密码不用于加密文件。"
       >
-        {isRequired ? 'Password' : 'Password (optional)'}
+        {isRequired ? '密码' : '密码（可选）'}
       </InputLabel>
       <input
         autoFocus
@@ -35,7 +35,7 @@ export default function PasswordField({
             ? 'border-red-500 dark:border-red-400'
             : 'border-stone-300 dark:border-stone-600'
         } bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100`}
-        placeholder="Enter a secret password for this slice of FilePizza..."
+        placeholder="为这片FilePizza输入一个密码..."
         value={value}
         onChange={handleChange}
       />
