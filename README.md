@@ -2,9 +2,11 @@
 
 # Filepizza-Workers
 
-# Online Demo 
+# Chinese Online Demo 
 
 https://filepizza.sboxm.eu.org/
+
+***
 
 *Cooked up by [Alex Kern](https://kern.io) & [Neeraj Baid](https://github.com/neerajbaid) while eating Sliver @ UC Berkeley.*
 
@@ -83,9 +85,10 @@ FilePizza is released under the [BSD 3-Clause license](https://github.com/kern/f
 <h3>在浏览器中进行点对点文件传输</h3>
 此项目是根据原项目的汉化版，并增加了Cloudflare Workers部署等相关配置项。
 
-# 在线 Demo
+# 中文在线 Demo
 https://filepizza.sboxm.eu.org/
 
+***
 *由 [Alex Kern](https://kern.io) 和 [Neeraj Baid](https://github.com/neerajbaid) 在加州大学伯克利分校享用 Sliver 时开发。*
 
 FilePizza 使用 [WebRTC](http://www.webrtc.org) 技术，消除了其他基于网络的文件共享服务所需的初始上传步骤。由于数据从不存储在中间服务器中，传输过程快速、私密且安全。
