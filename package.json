@@ -30,7 +30,7 @@
     "preview": "npx next build && npx next start",
     "preview:cloudflare": "npx wrangler dev",
     "preview:opennext": "npx @opennextjs/cloudflare preview",
-    "deploy": "npx @opennextjs/cloudflare deploy"
+    "deploy": "pnpm run build:cloudflare && npx @opennextjs/cloudflare deploy"
   },
   "repository": {
     "type": "git",
