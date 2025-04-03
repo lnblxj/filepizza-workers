@@ -22,8 +22,15 @@
     "docker:clean": "docker compose down -v --rmi all",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+
     "type:check": "tsc --noEmit",
-    "ci": "pnpm lint:check && pnpm format:check && pnpm type:check && pnpm build && pnpm docker:build"
+    "ci": "pnpm lint:check && pnpm format:check && pnpm type:check && pnpm build && pnpm docker:build",
+    "cf-typegen": "npx wrangler types",
+    "build:cloudflare": "npx @opennextjs/cloudflare build",
+    "preview": "npx next build && npx next start",
+    "preview:cloudflare": "npx wrangler dev",
+    "preview:opennext": "npx @opennextjs/cloudflare preview",
+    "deploy": "npx @opennextjs/cloudflare deploy"
   },
   "repository": {
     "type": "git",
@@ -56,6 +63,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "1.0.0-beta.0",
     "@types/debug": "^4.1.12",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
@@ -69,7 +77,8 @@
     "lint-staged": "^15.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.0.0",
-    "typescript-eslint": "^8.18.2"
+    "typescript-eslint": "^8.18.2",
+    "wrangler": "^4.7.0"
   },
   "husky": {
     "hooks": {
