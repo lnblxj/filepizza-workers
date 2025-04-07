@@ -117,9 +117,27 @@ export function useDownloader(uploaderPeerID: string): {
 
     const handleError = (err: Error) => {
       console.error('[Downloader] connection error:', err)
-      setErrorMessage(cleanErrorMessage(err.message))
-      if (conn.open) conn.close()
-      else handleClose()
+      const errorMsg = cleanErrorMessage(err.message)
+      
+      // if connection is closed, try to reconnect
+      if (errorMsg.includes('Could not connect to the uploader')) {
+        console.log('[Downloader] attempting to reconnect...')
+        setTimeout(() => {
+          if (!peer) return
+          const newConn = peer.connect(uploaderPeerID, { reliable: true })
+          setDataConnection(newConn)
+          
+          // create new event listeners
+          newConn.on('open', handleOpen)
+          newConn.on('data', handleData)
+          newConn.on('error', handleError)
+          newConn.on('close', handleClose)
+        }, 2000) // 2 seconds delay
+      } else {
+        setErrorMessage(errorMsg)
+        if (conn.open) conn.close()
+        else handleClose()
+      }
     }
 
     conn.on('open', handleOpen)
